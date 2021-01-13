@@ -9,11 +9,11 @@ object Globals {
     const val abn = "template"
     const val version = "1.0.0"
 
-    const val mcVer = "1.16.4"
-    const val yarnBuild = "7"
+    const val mcVer = "1.14.4"
+    const val yarnBuild = "18"
 
     const val loaderVer = "0.11"
-    const val fapiVer = "0.29.3+1.16"
+    const val fapiVer = "0.28.4+1.14"
 
     const val modrinthId = ""
     const val unstable = false
