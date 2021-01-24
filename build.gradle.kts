@@ -9,11 +9,11 @@ object Globals {
     const val abn = "template"
     const val version = "1.0.0"
 
-    const val mcVer = "20w51a"
-    const val yarnBuild = "29"
+    const val mcVer = "21w03a"
+    const val yarnBuild = "20"
 
-    const val loaderVer = "0.11.0"
-    const val fapiVer = "0.29.3+1.17"
+    const val loaderVer = "0.11.1"
+    const val fapiVer = "0.29.4+1.17"
 
     const val modrinthId = ""
     const val unstable = false
@@ -149,6 +149,6 @@ publishing {
     }
 
     repositories {
-        maven(url = System.getenv("MAVEN_REPO"))
+        if (System.getenv("MAVEN_REPO") != null) maven(url = System.getenv("MAVEN_REPO"))
     }
 }
