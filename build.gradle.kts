@@ -10,10 +10,10 @@ object Globals {
     const val version = "1.0.0"
 
     const val mcVer = "1.16.5"
-    const val yarnBuild = "1"
+    const val yarnBuild = "3"
 
     const val loaderVer = "0.11.0"
-    const val fapiVer = "0.29.3+1.16"
+    const val fapiVer = "0.30.0+1.16"
 
     const val modrinthId = ""
     const val unstable = false
@@ -136,14 +136,24 @@ tasks {
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
-            artifact(tasks.jar) {
-                builtBy(tasks.remapJar)
-            }
+            groupId = Globals.grp
+            artifactId = Globals.abn
+            version = Globals.version
+            
             artifact("${project.buildDir.absolutePath}/libs/${Globals.abn}-${Globals.version}.jar") {
-                builtBy(tasks.remapJar)
+                builtBy("remapJar")
             }
-            artifact(tasks.getByName("sourcesJar")) {
-                builtBy(tasks.remapSourcesJar)
+            
+            artifact("${project.buildDir.absolutePath}/libs/${Globals.abn}-${Globals.version}-dev.jar") {
+                builtBy("remapJar")
+            }
+            
+            artifact("${project.buildDir.absolutePath}/libs/${Globals.abn}-${Globals.version}-sources-dev.jar") {
+                builtBy("remapSourcesJar")
+            }
+            
+            artifact("${project.buildDir.absolutePath}/libs/${Globals.abn}-${Globals.version}-sources.jar") {
+                builtBy("remapSourcesJar")
             }
         }
     }
