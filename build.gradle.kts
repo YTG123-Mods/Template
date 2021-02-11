@@ -141,19 +141,22 @@ publishing {
             version = Globals.version
             
             artifact("${project.buildDir.absolutePath}/libs/${Globals.abn}-${Globals.version}.jar") {
-                builtBy("remapJar")
+                builtBy(tasks.remapJar)
             }
-            
+
             artifact("${project.buildDir.absolutePath}/libs/${Globals.abn}-${Globals.version}-dev.jar") {
-                builtBy("remapJar")
+                classifier = "dev"
+                builtBy(tasks.remapJar)
             }
-            
+
             artifact("${project.buildDir.absolutePath}/libs/${Globals.abn}-${Globals.version}-sources-dev.jar") {
-                builtBy("remapSourcesJar")
+                classifier = "sources"
+                builtBy(tasks.remapSourcesJar)
             }
-            
+
             artifact("${project.buildDir.absolutePath}/libs/${Globals.abn}-${Globals.version}-sources.jar") {
-                builtBy("remapSourcesJar")
+                classifier = "sources-intermediary"
+                builtBy(tasks.remapSourcesJar)
             }
         }
     }
