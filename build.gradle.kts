@@ -1,5 +1,5 @@
 plugins {
-    id("fabric-loom") version "0.5-SNAPSHOT"
+    id("fabric-loom") version "0.6-SNAPSHOT"
     `maven-publish`
     id("com.modrinth.minotaur") version "1.1.0"
 }
@@ -145,17 +145,17 @@ publishing {
             }
 
             artifact("${project.buildDir.absolutePath}/libs/${Globals.abn}-${Globals.version}-dev.jar") {
-                classifier = "dev"
+                classifier = "named"
                 builtBy(tasks.remapJar)
             }
 
             artifact("${project.buildDir.absolutePath}/libs/${Globals.abn}-${Globals.version}-sources-dev.jar") {
-                classifier = "sources"
+                classifier = "sources-named"
                 builtBy(tasks.remapSourcesJar)
             }
 
             artifact("${project.buildDir.absolutePath}/libs/${Globals.abn}-${Globals.version}-sources.jar") {
-                classifier = "sources-intermediary"
+                classifier = "sources"
                 builtBy(tasks.remapSourcesJar)
             }
         }
