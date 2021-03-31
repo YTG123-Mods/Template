@@ -1,5 +1,5 @@
 plugins {
-    id("fabric-loom") version "0.5-SNAPSHOT"
+    id("fabric-loom") version "0.6-SNAPSHOT"
     `maven-publish`
     id("com.modrinth.minotaur") version "1.1.0"
 }
@@ -9,11 +9,11 @@ object Globals {
     const val abn = "template"
     const val version = "1.0.0"
 
-    const val mcVer = "21w03a"
-    const val yarnBuild = "20"
+    const val mcVer = "21w13a"
+    const val yarnBuild = "5"
 
-    const val loaderVer = "0.11.1"
-    const val fapiVer = "0.29.4+1.17"
+    const val loaderVer = "0.11.3"
+    const val fapiVer = "0.32.6+1.17"
 
     const val modrinthId = ""
     const val unstable = false
